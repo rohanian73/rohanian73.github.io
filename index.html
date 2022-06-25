@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo/MG-logo.png">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Movie Guide: your film chooser</title>
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <button class="top-btn">
+            <div class="top-btn-arrow"></div>
+        </button>
+
+        <header class="header full-height">
+            <div class="container">
+
+                <div class="header-bar header-bar__fixed">
+
+                    <button class="header-burger-btn">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <path class="line line1"
+                                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                            <path class="line line2" d="M 20,50 H 80" />
+                            <path class="line line3"
+                                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                        </svg>
+                    </button>
+
+                    <h3 class="title__short">MG</h3>
+
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a class="nav-link" href="#top-five">Week's Top Five</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact-me">Contact Me</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#footer">Soc Networks</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <div class="header-hero">
+                    <div class="title">Movie Guide</div>
+                    <div class="subtitle">your film chooser</div>
+                    <div class="btn-item" id="btnItem">
+                        <a class="btn-link" href="questionnaire.html">Go ahead!</a>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <section class="top-five-section full-height" id="top-five">
+                <div class="container top-five-container">
+                    <h3 class="heading">Week's Top Five</h3>
+
+                    <div class="slider anim-item anim-no-hide" id="slider">
+                        
+                        <div class="slider-card-wrap">
+                            <div class="slider-card">
+                                <img class="slider-card__front" src="https://wallpaper.dog/large/17095096.jpg"
+                                    alt="Avengers: Infinity War" />
+
+                                <div class="slider-card__back">
+                                    <h3 class="slider-title">Avengers: Infinity War</h3>
+                                    <div class="slider-subline"></div>
+                                    <p class="slider-overview">As the Avengers and their allies continue to defend the
+                                        world
+                                        from a variety of dangers that a single superhero couldn't handle, a new threat
+                                        emerges from outer space: Thanos. An intergalactic tyrant is on a mission to
+                                        collect
+                                        all six Infinity Stones - artifacts of incredible power with which you can
+                                        change
+                                        reality at will. Everything the Avengers have encountered before has led to this
+                                        moment - the fate of the Earth has never been so uncertain.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-card-wrap">
+                            <div class="slider-card">
+                                <img class="slider-card__front" src="images/slider/avatar.jpg" alt="Avatar" />
+
+                                <div class="slider-card__back">
+                                    <h3 class="slider-title">Avatar</h3>
+                                    <div class="slider-subline"></div>
+                                    <p class="slider-overview">Jake Sully is a wheelchair-bound ex-Marine. Despite his
+                                        weak
+                                        body, Jake is still a warrior at heart. He is given the task of making a journey
+                                        of
+                                        several light years to the base of earthlings on the planet Pandora, where
+                                        corporations are mining a rare mineral that is of great importance for the
+                                        Earth's
+                                        exit from the energy crisis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-card-wrap">
+                            <div class="slider-card">
+                                <img class="slider-card__front" src="images/slider/deadpool.jpeg" alt="Deadpool" />
+
+                                <div class="slider-card__back">
+                                    <h3 class="slider-title">Deadpool</h3>
+                                    <div class="slider-subline"></div>
+                                    <p class="slider-overview">Wade Wilson is a mercenary. As a by-product of the
+                                        military's
+                                        "Weapon X" program, Wilson gained incredible strength, agility, and healing
+                                        abilities. But at a terrible cost: his cellular structure is constantly
+                                        changing,
+                                        and his sanity is questionable. All Wilson wants is to stay afloat in the social
+                                        cesspool. But the current is too fast.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-card-wrap">
+                            <div class="slider-card">
+                                <img class="slider-card__front" src="images/slider/joker.jpeg" alt="Joker" />
+
+                                <div class="slider-card__back">
+                                    <h3 class="slider-title">Joker</h3>
+                                    <div class="slider-subline"></div>
+                                    <p class="slider-overview">Gotham, early 1980s. Comedian Arthur Fleck lives with his
+                                        ailing mother, who teaches him from childhood to "walk with a smile." Trying to
+                                        bring good things to the world and give people joy, Arthur is faced with human
+                                        cruelty and gradually comes to the conclusion that this world will receive from
+                                        him
+                                        not a kind smile, but the grin of the villain Joker.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-card-wrap">
+                            <div class="slider-card">
+                                <img class="slider-card__front" src="images/slider/venom.jpeg" alt="Venom" />
+
+                                <div class="slider-card__back">
+                                    <h3 class="slider-title">Venom</h3>
+                                    <div class="slider-subline"></div>
+                                    <p class="slider-overview">The plot centers on Venom, one of the most famous
+                                        anti-heroes
+                                        in the Spider-Man universe. This is a symbiote, a sentient creature of alien
+                                        origin,
+                                        which inhabits the body of journalist Eddie Brock.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section class="about-section full-height" id="about">
+                <div class="container">
+                    <div class="heading about-heading">About</div>
+
+                    <div class="about-list">
+                        <div class="about-item">
+                            <img class="about-img anim-item anim-no-hide" src="images/about/programmer.png"
+                                alt="Programmer">
+                            <h4 class="about-title anim-item anim-no-hide">Who is the author?</h4>
+                            <p class="about-text anim-item anim-no-hide">I'm a young guy who's fond of IT for 2 years.
+                                My goal was to
+                                create a web site which will provide you with the most relevant movies depending on your
+                                wishes and preferences. So, check it out!)
+                            </p>
+                        </div>
+                        <div class="about-item">
+                            <img class="about-img anim-item anim-no-hide" src="images/about/advantages.png"
+                                alt="Advantages">
+                            <h4 class="about-title anim-item anim-no-hide">Advantages</h4>
+                            <p class="about-text anim-item anim-no-hide">Using my service, you get a list of exact films
+                                you probably
+                                wanted to watch, but haven't known about them yet. The proccess is super fast and you
+                                can search them as many times as you wish, cause it's free, which saves your time and
+                                money
+                                completely.
+                            </p>
+                        </div>
+                        <div class="about-item">
+                            <img class="about-img anim-item anim-no-hide" src="images/about/handshake.png"
+                                alt="Handshake">
+                            <h4 class="about-title anim-item anim-no-hide">Your support</h4>
+                            <p class="about-text anim-item anim-no-hide">Frankly, this project took plenty of time and
+                                I'd be more than
+                                grateful for any contribution. The link to my bank details you can find on the social
+                                media pages of this web site.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-me-section full-height" id="contact-me">
+                <div class="container">
+                    <div class="heading contact-me-heading">Contact Me</div>
+
+                    <form class="form anim-item anim-no-hide"
+                        action="https://formsubmit.co/official.movie.guide@gmail.com" method="POST">
+                        <div class="form-list">
+                            <div class="form-item">
+                                <input class="form-input" type="text" name="name" autocomplete="off" required>
+                                <label class="form-label" for="name">Name</label>
+                            </div>
+                            <div class="form-item">
+                                <input class="form-input" type="text" name="email" autocomplete="off" required>
+                                <label class="form-label" for="email">Email</label>
+                            </div>
+                            <div class="form-item">
+                                <textarea class="textarea" name="message" id="text" required></textarea>
+                                <label class="textarea-label" for="text">Message</label>
+                            </div>
+                            <div class="form-item">
+                                <button class="form-btn" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="footer-col">
+                        <h2 class="footer-title">Movie Guide</h2>
+                        <p class="footer-text">This site has been created solely to help you find movies.
+                            Please, follow the generally accepted rules of users on the site, do not flood
+                            and have fun!
+                        </p>
+                    </div>
+
+                    <div class="footer-col">
+                        <div class="social-btn">
+                            <div class="social-icon">
+                                <i class="fa fa-facebook-f"></i>
+                            </div>
+                        </div>
+                        <div class="social-btn">
+                            <div class="social-icon">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </div>
+                        <div class="social-btn">
+                            <div class="social-icon">
+                                <i class="fa fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="social-btn">
+                            <div class="social-icon">
+                                <i class="fa fa-reddit"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://use.fontawesome.com/1948b88eb3.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

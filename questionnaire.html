@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo/MG-logo.png">
+    <link rel="stylesheet" href="css/questionnaire.css">
+    <title>Movie Guide: your film chooser</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="preloader" id="preloader">
+            <div class="loader">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <section class="q-section full-height">
+            <div class="container" id="container">
+
+                <div class="genre-list" id="genreList">
+                    <div class="genre-item">Action</div>
+                    <div class="genre-item">Adventure</div>
+                    <div class="genre-item">Drama</div>
+                    <div class="genre-item">Comedy</div>
+                </div>
+
+                <button class="submit-btn" id="submitBtn" disabled>
+                    <div class="submit-btn-arrow" id="submitBtnArrow"></div>
+                </button>
+
+                <div class="actor-form" id="actorForm" tabindex="-1">
+                    <input type="text" class="actor-input" id="actorInput" placeholder="Desired Actor"
+                        autocomplete="off" />
+                    <label class="actor-label" for="actorInput">
+                        <span class="actor-span">Desired Actor</span>
+                    </label>
+
+                    <div class="skip-checkbox">
+                        <input class="skip-checkbox-input" id="skipCboxInput" type="checkbox">
+                        <label class="skip-checkbox-label" id="skipCboxLabel" for="skipCboxInput">
+                            <svg width="18px" height="18px" viewBox="0 0 18 18">
+                                <path
+                                    d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                                </path>
+                                <polyline points="1 9 7 14 15 4"></polyline>
+                            </svg>
+                            <span class="skip-checkbox-span">Specific actors aren't very important to me.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="decades-wrap">
+                    <div class="decades-list">
+
+                        <ul class="decades-col">
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1930" value="1930">
+                                <span class="decades-span"></span>
+                                <label for="1930" class="decades-label">The 1930s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1940" value="1940">
+                                <span class="decades-span"></span>
+                                <label for="1940" class="decades-label">The 1940s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1950" value="1950">
+                                <span class="decades-span"></span>
+                                <label for="1950" class="decades-label">The 1950s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1960" value="1960">
+                                <span class="decades-span"></span>
+                                <label for="1960" class="decades-label">The 1960s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1970" value="1970">
+                                <span class="decades-span"></span>
+                                <label for="1970" class="decades-label">The 1970s</label>
+                            </li>
+                        </ul>
+
+                        <ul class="decades-col">
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1980" value="1980">
+                                <span class="decades-span"></span>
+                                <label for="1980" class="decades-label">The 1980s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="1990" value="1990">
+                                <span class="decades-span"></span>
+                                <label for="1990" class="decades-label">The 1990s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="2000" value="2000">
+                                <span class="decades-span"></span>
+                                <label for="2000" class="decades-label">The 2000s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="2010" value="2010">
+                                <span class="decades-span"></span>
+                                <label for="2010" class="decades-label">The 2010s</label>
+                            </li>
+                            <li class="decades-item">
+                                <input type="checkbox" class="decades-input" id="2020" value="2020">
+                                <span class="decades-span"></span>
+                                <label for="2020" class="decades-label">The 2020s</label>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="skip-checkbox" id="decadesSkipCbox">
+                        <input class="skip-checkbox-input" id="decadesSkipCboxInput" type="checkbox">
+                        <label class="skip-checkbox-label" id="decadesSkipCboxLabel" for="decadesSkipCboxInput">
+                            <svg width="18px" height="18px" viewBox="0 0 18 18">
+                                <path
+                                    d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z">
+                                </path>
+                                <polyline points="1 9 7 14 15 4"></polyline>
+                            </svg>
+                            <span class="skip-checkbox-span decades-skip-checkbox-span" id="decadesSkipCboxSpan">The
+                                time doesn't really matter to me.</span>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="country-wrap" tabindex="-1">
+                    <div class="country-select" tabindex="-1">
+                        <button class="country-btn" tabindex="-1">Desired Production Country</button>
+                        <ul class="country-list" tabindex="-1">
+                            <li class="country-item">United States</li>
+                            <li class="country-item">Spain</li>
+                            <li class="country-item">France</li>
+                            <li class="country-item">Germany</li>
+                            <li class="country-item">Italy</li>
+                            <li class="country-item">Japan</li>
+                            <li class="country-item">China</li>
+                            <li class="country-item">Korea</li>
+                            <li class="country-item">India</li>
+                            <li class="country-item">Israel</li>
+                        </ul>
+                        <input type="text" name="select-category" value="" class="country-input__hidden" tabindex="-1">
+                        <button class="final-btn" id="finalSubmitBtn" tabindex="-1">Make a list!</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <h1 class="movie-list-title">Enjoy.</h1>
+
+        <main id="main"></main>
+
+        <div class="pagination">
+            <button class="page-btn" id="prev">
+                <div class="page-btn-arrow page-btn-arrow__first"></div>
+            </button>
+            <div class="current" id="current">1</div>
+            <button class="page-btn" id="next">
+                <div class="page-btn-arrow page-btn-arrow__last"></div>
+            </button>
+        </div>
+
+    </div>
+
+    <script src="js/questionnaire.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>
