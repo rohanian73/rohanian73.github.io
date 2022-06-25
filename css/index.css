@@ -109,6 +109,10 @@
 
 /* Main */
 
+body {
+    overflow-x: hidden;
+}
+
 .wrapper {
     font-family: 'Open-Sans', sans-serif;
     opacity: 0;
@@ -804,19 +808,19 @@
     transform: translateY(-10px);
 }
 
-.social-btn:nth-child(1):hover .social-icon {
+.social-btn-link:nth-child(1):hover .social-icon {
     background-color: #4267b2;
 }
 
-.social-btn:nth-child(2):hover .social-icon {
+.social-btn-link:nth-child(2):hover .social-icon {
     background-color: #1da1f2;
 }
 
-.social-btn:nth-child(3):hover .social-icon {
+.social-btn-link:nth-child(3):hover .social-icon {
     background-color: #e1306c;
 }
 
-.social-btn:nth-child(4):hover .social-icon {
+.social-btn-link:nth-child(4):hover .social-icon {
     background-color: #fd461e;
 }
 
