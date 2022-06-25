@@ -718,9 +718,7 @@ submitBtn.onclick = function (b) {
 
 submitBtn.addEventListener('click', function () {
     if (submitBtnClicks === 2) {
-
-        document.body.style.overflowY = 'hidden';
-
+        
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
