@@ -91,7 +91,6 @@
     display: block;
     width: 18px;
     height: 18px;
-    background-color: transparent;
     border-top: 4px solid #222;
     border-left: 4px solid #222;
     transform: rotate(45deg);
@@ -789,6 +788,9 @@ body {
 
     border-radius: 50px;
     flex: left;
+
+    border: none;
+    outline: none;
 
     background-color: #222;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
