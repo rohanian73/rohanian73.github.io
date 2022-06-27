@@ -796,28 +796,27 @@ svg {
     transition: all 0.2s;
 }
 
-.page-btn-arrow {
-    position: relative;
-    width: 0;
-    height: 20px;
-}
-
-.page-btn-arrow::after {
-    position: absolute;
+.page-btn::after {
     content: '';
-    width: 14px;
-    height: 14px;
-    top: 2px;
-    left: 6px;
-    border-top: 3px solid #222;
-    border-right: 3px solid #222;
-    transform: rotate(45deg);
-    transition: all 0.5s;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-top: 4px solid #222;
+    border-left: 4px solid #222;
+
+    position: relative;
+    left: 30%;
+    top: 7%;
+
+    transition: 0.3s;
 }
 
-.page-btn-arrow__first:after {
-    left: 12px;
-    transform: rotate(-135deg);
+.page-btn__prev {
+    transform: rotate(315deg);
+}
+
+.page-btn__next {
+    transform: rotate(135deg);
 }
 
 .page-btn:hover {
@@ -829,9 +828,9 @@ svg {
     border: 2px solid #cacaca;
 }
 
-.page-btn:hover .page-btn-arrow::after {
-    border-top: 3px solid #fff;
-    border-right: 3px solid #fff;
+.page-btn:hover::after {
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
 }
 
 /* Adaptive Design */
