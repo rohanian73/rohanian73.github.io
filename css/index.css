@@ -492,6 +492,8 @@ body {
 
 .contact-me-section {
     background: url('../images/backgrounds/contact-me-bg.jpg') no-repeat center / cover;
+
+    height: 110vh;
 }
 
 .contact-me-heading {

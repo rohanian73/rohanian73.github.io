@@ -20,6 +20,7 @@ init1();
 const API_KEY = 'api_key=d9172e41bf93ea77fb5869bf1679a83a';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const PERSON_URL = BASE_URL + '/search/person?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 const searchActorID = BASE_URL + '/search/person?' + API_KEY;
@@ -170,6 +171,7 @@ function showBtn() {
 const actorForm = document.querySelector('.actor-form');
 const actorInput = document.querySelector('.actor-input');
 const actorLabel = document.querySelector('.actor-label');
+const actorList = document.querySelector('.actor-list');
 
 const skipCboxInput = document.querySelector('.skip-checkbox-input');
 const skipCboxLabel = document.querySelector('.skip-checkbox-label');
@@ -179,19 +181,95 @@ actorInput.addEventListener('input', function (e) {
     if (val.length) {
         skipCboxInput.setAttribute('disabled', 'disabled');
         skipCboxLabel.style.cursor = "default";
+        actorList.classList.add("actor-list__visible");
         submitBtn.removeAttribute('disabled', 'disabled');
         submitBtn.style.opacity = "1";
         submitBtn.style.cursor = "pointer";
         submitBtn.style.marginTop = "0";
         submitBtn.style.position = "absolute";
         submitBtn.style.top = "65%";
+
+        let actorsNames = [];
+
+        let actorsNamesUrl = PERSON_URL + '&query=' + val + '&page=' + 1;
+        console.log(actorsNamesUrl);
+
+        getActors(PERSON_URL);
+
+
+
+        function getActors(url) {
+
+            fetch(actorsNamesUrl).then(res => res.json()).then(data => {
+
+                for (let i = 0; i < data.results.length; i++) {
+
+                    if (i == 0) {
+
+                        if (actorsNames.length != 0) {
+
+                            actorsNames.length = 0;
+
+                        }
+
+                    }
+
+                    if (data.results[i].known_for_department === "Acting" 
+                        && data.results[i].name.substring(0, val.length).toLowerCase() === val.toLowerCase() 
+                        && data.results[i].popularity > 5) {
+
+                            // console.log(data.results[i].name);
+
+                            actorsNames.push(data.results[i].name);
+
+                    }
+
+                    if (i == data.results.length - 1) {
+
+                        for (let i = 0; i < actorsNames.length; i++) {
+                            
+                            // console.log(actorsNames[i]);
+
+                            actorList.scrollTop = 0;
+
+                            if (i == 0) {
+
+                                actorList.innerHTML = '';
+
+                            }
+
+                            const actorItem = document.createElement("li");
+                            actorItem.textContent = actorsNames[i];
+                            actorList.appendChild(actorItem);
+
+                            actorItem.addEventListener("click", () => {
+
+                                actorInput.value = actorItem.textContent;
+                                actorList.classList.remove("actor-list__visible");
+
+                            });
+                            
+                        }
+
+                    }
+
+                }
+
+            });
+    
+        }
+
+        
+
     } else {
         skipCboxInput.removeAttribute('disabled', 'disabled');
         skipCboxLabel.style.cursor = "pointer";
+        actorList.classList.remove("actor-list__visible");
         submitBtn.setAttribute('disabled', 'disabled');
         submitBtn.style.opacity = "0";
     }
 });
+
 
 // Skip Checkbox
 
@@ -214,6 +292,7 @@ skipCboxInput.addEventListener('click', (event) => {
         submitBtn.style.opacity = "0";
     }
 });
+
 
 // Decades List
 
@@ -376,6 +455,10 @@ finalSubmitBtn.addEventListener('click', function () {
 
     movieListTitle.style.opacity = '1';
     movieListTitle.style.cursor = 'text';
+
+    const returnBtn = document.getElementById('returnBtn');
+
+    returnBtn.classList.add('return-btn__visible');
 
     const pagination = document.querySelector('.pagination');
     const prev = document.getElementById('prev');
