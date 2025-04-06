@@ -470,8 +470,22 @@ finalSubmitBtn.addEventListener('click', function () {
     let prevPage = 3;
     let totalPages = 100;
 
-    let finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
+    // let finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
+    //     qResult.time + '&with_original_language=' + qResult.country;
+
+    let finalUrl;
+
+    switch(qResult.actorID) {
+
+        case null: 
+        finalUrl = API_URL + '&with_genres=' + qResult.genre + '&primary_release_year=' + 
         qResult.time + '&with_original_language=' + qResult.country;
+
+        default:
+        finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
+        qResult.time + '&with_original_language=' + qResult.country;
+
+    }
 
     console.log(finalUrl);
 
