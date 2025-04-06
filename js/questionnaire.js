@@ -487,7 +487,7 @@ finalSubmitBtn.addEventListener('click', function () {
 
     // }
 
-    if (qResult.actorID = null) {
+    if (!qResult.actorID) {
 
         finalUrl = API_URL + '&with_genres=' + qResult.genre + '&primary_release_year=' + 
         qResult.time + '&with_original_language=' + qResult.country;
@@ -853,7 +853,11 @@ submitBtn.addEventListener('click', function () {
 
         // Getting Actor's ID
 
-        getActorID(searchActorID + '&query=' + encodeURI(actorInput.value));
+        if (!actorInput.value) {
+            qResult.actorID = null
+        } else {
+            getActorID(searchActorID + '&query=' + encodeURI(actorInput.value));
+        }
 
         function getActorID(url) {
             fetch(url).then(res => res.json()).then(data => {
