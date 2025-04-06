@@ -1,3 +1,5 @@
+console.log("Test 4")
+
 // Preloader
 
 const preloader = document.getElementById('preloader');
@@ -498,8 +500,6 @@ finalSubmitBtn.addEventListener('click', function () {
         qResult.time + '&with_original_language=' + qResult.country;
 
     }
-
-    console.log("Test 3")
 
     console.log(qResult);
 
