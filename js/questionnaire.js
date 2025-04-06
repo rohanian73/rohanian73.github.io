@@ -475,17 +475,31 @@ finalSubmitBtn.addEventListener('click', function () {
 
     let finalUrl;
 
-    switch(qResult.actorID) {
+    // switch(qResult.actorID) {
 
-        case null: 
+    //     case null: 
+    //     finalUrl = API_URL + '&with_genres=' + qResult.genre + '&primary_release_year=' + 
+    //     qResult.time + '&with_original_language=' + qResult.country;
+
+    //     default:
+    //     finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
+    //     qResult.time + '&with_original_language=' + qResult.country;
+
+    // }
+
+    if (qResult.actorID = null) {
+
         finalUrl = API_URL + '&with_genres=' + qResult.genre + '&primary_release_year=' + 
         qResult.time + '&with_original_language=' + qResult.country;
 
-        default:
+    } else {
+
         finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
         qResult.time + '&with_original_language=' + qResult.country;
 
     }
+
+    console.log("Test 3")
 
     console.log(qResult);
 
