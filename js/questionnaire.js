@@ -487,6 +487,8 @@ finalSubmitBtn.addEventListener('click', function () {
 
     }
 
+    console.log(qResult);
+
     console.log(finalUrl);
 
     getMovies(API_URL);
@@ -803,7 +805,7 @@ const qResult = {
     country: null,
 }
 
-console.log(qResult);
+// console.log(qResult);
 
 // Submit Btn
 
