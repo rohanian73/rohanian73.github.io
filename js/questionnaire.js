@@ -1,5 +1,3 @@
-console.log("Test 5")
-
 // Preloader
 
 const preloader = document.getElementById('preloader');
@@ -193,34 +191,26 @@ actorInput.addEventListener('input', function (e) {
 
         let actorsNames = [];
 
-        let actorsNamesUrl = PERSON_URL + '&query=' + val + '&page=' + 1;
-        console.log(actorsNamesUrl);
+        let actorsNamesUrl = PERSON_URL + '&query=' + val;
 
         getActors(PERSON_URL);
-
-
 
         function getActors(url) {
 
             fetch(actorsNamesUrl).then(res => res.json()).then(data => {
 
+                actorList.scrollTop = 0;
+                actorList.innerHTML = '';
+
                 for (let i = 0; i < data.results.length; i++) {
 
                     if (i == 0) {
-
-                        if (actorsNames.length != 0) {
-
-                            actorsNames.length = 0;
-
-                        }
-
+                        actorsNames.length = 0;
                     }
 
                     if (data.results[i].known_for_department === "Acting" 
-                        && data.results[i].name.substring(0, val.length).toLowerCase() === val.toLowerCase() 
-                        && data.results[i].popularity > 5) {
-
-                            // console.log(data.results[i].name);
+                        && data.results[i].name.substring(0, val.length).toLowerCase() === val.toLowerCase()
+                        && data.results[i].popularity > 0.1) {
 
                             actorsNames.push(data.results[i].name);
 
@@ -229,16 +219,6 @@ actorInput.addEventListener('input', function (e) {
                     if (i == data.results.length - 1) {
 
                         for (let i = 0; i < actorsNames.length; i++) {
-                            
-                            // console.log(actorsNames[i]);
-
-                            actorList.scrollTop = 0;
-
-                            if (i == 0) {
-
-                                actorList.innerHTML = '';
-
-                            }
 
                             const actorItem = document.createElement("li");
                             actorItem.textContent = actorsNames[i];
@@ -472,22 +452,7 @@ finalSubmitBtn.addEventListener('click', function () {
     let prevPage = 3;
     let totalPages = 100;
 
-    // let finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
-    //     qResult.time + '&with_original_language=' + qResult.country;
-
     let finalUrl;
-
-    // switch(qResult.actorID) {
-
-    //     case null: 
-    //     finalUrl = API_URL + '&with_genres=' + qResult.genre + '&primary_release_year=' + 
-    //     qResult.time + '&with_original_language=' + qResult.country;
-
-    //     default:
-    //     finalUrl = API_URL + '&with_genres=' + qResult.genre + '&with_cast=' + qResult.actorID + '&primary_release_year=' +
-    //     qResult.time + '&with_original_language=' + qResult.country;
-
-    // }
 
     if (!qResult.actorID) {
 
@@ -500,10 +465,6 @@ finalSubmitBtn.addEventListener('click', function () {
         qResult.time + '&with_original_language=' + qResult.country;
 
     }
-
-    console.log(qResult);
-
-    console.log(finalUrl);
 
     getMovies(API_URL);
 
@@ -861,7 +822,11 @@ submitBtn.addEventListener('click', function () {
 
         function getActorID(url) {
             fetch(url).then(res => res.json()).then(data => {
-                assignActorID(data.results[0]);
+                if (data.results.length == 0) {
+                    qResult.actorID = -1;
+                } else {
+                    assignActorID(data.results[0]);
+                }
             });
         }
 
